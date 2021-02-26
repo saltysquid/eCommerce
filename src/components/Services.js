@@ -1,10 +1,40 @@
-import React from 'react'
-import styled from 'styled-components'
-import { services } from '../utils/constants'
+import React from "react";
+import styled from "styled-components";
+import { services } from "../utils/constants";
 
 const Services = () => {
-  return <h4>services </h4>
-}
+  return (
+    <Wrapper>
+      <div className="section-center">
+        <article className="header">
+          <h3>
+            custom furniture <br /> built only for you
+          </h3>
+          <p>
+            Zombie ipsum reversus ab viral inferno, nam rick grimes malum
+            cerebro. De carne lumbering animata corpora quaeritis. Summus brains
+            sit​​, morbo vel maleficia? De apocalypsi gorger omero undead
+            survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo
+            evil stalking monstra adventus resi dentevil vultus comedat
+            cerebella viventium.
+          </p>
+        </article>
+        <div className="services-center">
+          {services.map((service) => {
+            const { id, icon, title, text } = service;
+            return (
+              <article key={id} className="service">
+                <span className="icon">{icon}</span>
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   h3,
@@ -68,5 +98,5 @@ const Wrapper = styled.section`
       transform: translateY(5rem);
     }
   }
-`
-export default Services
+`;
+export default Services;

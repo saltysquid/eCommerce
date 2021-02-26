@@ -15,6 +15,38 @@ const products_reducer = (state, action) => {
       return { ...state, isSidebarOpen: true };
     case SIDEBAR_CLOSE:
       return { ...state, isSidebarOpen: false };
+    case GET_PRODUCTS_BEGIN:
+      return { ...state, products_isLoading: true };
+    case GET_PRODUCTS_SUCCESS:
+      const featured_products = action.payload.filter(
+        (product) => product.featured === true
+      );
+      return {
+        ...state,
+        products_isLoading: false,
+        products: action.payload,
+        featured_products,
+      };
+    case GET_PRODUCTS_ERROR:
+      return { ...state, products_isLoading: false, products_error: true };
+    case GET_SINGLE_PRODUCT_BEGIN:
+      return {
+        ...state,
+        single_product_isLoading: true,
+        single_product_error: false,
+      };
+    case GET_SINGLE_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        single_product_isLoading: false,
+        single_product: action.payload,
+      };
+    case GET_SINGLE_PRODUCT_ERROR:
+      return {
+        ...state,
+        single_product_isLoading: false,
+        single_product_error: true,
+      };
     default:
       console.log("unexpected action in products reducer");
   }

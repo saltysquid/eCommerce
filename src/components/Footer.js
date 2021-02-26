@@ -9,6 +9,12 @@ const Footer = () => {
         <span> Comfy Sloth</span>
       </h5>
       <h5>All rights reserved</h5>
+      <h6>
+        by{" "}
+        <a href="https://www.squiddy.ink" target="_blank">
+          Brian Legg
+        </a>
+      </h6>
     </Wrapper>
   );
 };
@@ -31,6 +37,10 @@ const Wrapper = styled.footer`
     font-weight: 400;
     text-transform: none;
     line-height: 1.25;
+  }
+  h6,
+  a {
+    color: var(--clr-primary-5);
   }
   @media (min-width: 776px) {
     flex-direction: row;

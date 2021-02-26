@@ -48,11 +48,8 @@ const products_reducer = (state, action) => {
         single_product_error: true,
       };
     default:
-      console.log("unexpected action in products reducer");
+      throw new Error(`unexpected action "${action.type}" in products reducer`);
   }
-
-  return state;
-  throw new Error(`No Matching "${action.type}" - action type`);
 };
 
 export default products_reducer;

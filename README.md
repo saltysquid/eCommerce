@@ -15,3 +15,5 @@
 "react-dom": "^17.0.1",
 "react-scripts": "4.0.0",
 ```
+
+\*RUN APP WITH 'NTL DEV' TO RUN WITH FUNCTIONS

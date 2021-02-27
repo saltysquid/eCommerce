@@ -11,7 +11,7 @@ const Footer = () => {
       <h5>All rights reserved</h5>
       <h6>
         by{" "}
-        <a href="https://www.squiddy.ink" target="_blank">
+        <a href="https://www.squiddy.ink" target="_blank" rel="noreferrer">
           Brian Legg
         </a>
       </h6>
